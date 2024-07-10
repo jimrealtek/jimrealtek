@@ -1,16 +1,45 @@
-## Hi there 👋
+#import modules
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+sns.set(color_codes=True)
 
-<!--
-**jimrealtek/jimrealtek** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+#Load the carpricedetection.csv dataset
+carprice = pd.read_csv('carpricedetection.csv')
 
-Here are some ideas to get you started:
+#display all the columns and 5 rows record from the top
+heading = carprice.head(2)
+print(heading)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+print('\n')
+
+#Display the datatype used in all the columns
+datatype = carprice.shape
+print(datatype)
+
+print('\n')
+
+#Load dataset from the bottom
+tail = carprice.tail(2)
+print(tail)
+
+print('\n')
+
+#Display all the columns in the dataset
+column = carprice.columns
+print(column)
+
+print('\n')
+
+#Analytical summary of the dataset
+summary = carprice.describe(include='all')
+print(summary)
+
+print('\n')
+
+#Histogram plotting on each column
+Histogram = carprice.hist(figsize=(25,30))
+print(Histogram)
+
